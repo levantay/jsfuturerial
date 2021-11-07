@@ -9,18 +9,18 @@ const getName = (ele) => {
 document.getElementById('submitBtn').addEventListener('click', () => {
     //fullName
     const nameInput = $("nameInput")
-    const nameValue = fullName.value
+    const nameValue = nameInput.value
     const success = '<span class="text-success">Good job!</span>';
     const fieldRequired = "<span class ='text-danger'>This field is required.</span>"
     const regExpName = /^[a-z]+(?:\s[a-z]+)+$/;
     const nameMsg = $("nameMsg")
     if (nameValue === "") {
-    textName.innerHTML =fieldRequired;
+    nameInput.innerHTML =fieldRequired;
   } else if (!regExpName.test(nameValue)) {
-    textName.innerHTML =
+    nameInput.innerHTML =
       "<span class ='text-danger'>Your full name is invalid.</span>";
   } else {
-    textName.innerHTML = success
+    nameInput.innerHTML = success
   }
 
     // email 
@@ -63,7 +63,14 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     
     //validate all
 
-    
+    if (
+        nameMsg.innerHTML === getSuccess &&
+        emailMsg.innerHTML === getSuccess &&
+        sportMsg.innerHTML === "" &&
+        textMsg.innerHTML === ""
+    ) {
+        alert("Sent data! We will contact you as soon as possible")
+    }
 })
 
 //reset
