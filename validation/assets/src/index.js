@@ -33,6 +33,8 @@ document.getElementById('submitBtn').addEventListener('click', () => {
         emailMsg.innerHTML = "<span class ='text-danger'>This field is required.</span>";
     } else if ( falEmail === -1 || falEmail === 0 || falEmail === emailInput.value[length-1]) {
         emailMsg.innerHTML = "<span class ='text-danger'>Your email is invalid. Please correct your email.</span>"
+    } else if (regExpEmail.test(emailInput.value)) {
+        emailMsg.innerHTML =  "<span class ='text-danger'>We only accept educational emails.</span>"
     } else {
         emailMsg.innerHTML = getSuccess
     }
