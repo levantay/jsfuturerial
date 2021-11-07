@@ -63,14 +63,7 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     
     //validate all
 
-    if (
-        nameMsg.innerHTML === getSuccess &&
-        emailMsg.innerHTML === getSuccess &&
-        sportMsg.innerHTML === "" &&
-        textMsg.innerHTML === ""
-    ) {
-        alert("Sent data! We will contact you as soon as possible")
-    }
+    
 })
 
 //reset
