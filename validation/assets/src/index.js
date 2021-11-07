@@ -8,19 +8,19 @@ const getName = (ele) => {
 
 document.getElementById('submitBtn').addEventListener('click', () => {
     //fullName
-    const nameInput = $("nameInput")
+    const nameInput = $('nameInput')
     const nameValue = nameInput.value
-    const success = '<span class="text-success">Good job!</span>';
+    const getSuccess = '<span class="text-success">Good job!</span>';
     const fieldRequired = "<span class ='text-danger'>This field is required.</span>"
     const regExpName = /^[a-z]+(?:\s[a-z]+)+$/;
     const nameMsg = $("nameMsg")
     if (nameValue === "") {
-    nameInput.innerHTML =fieldRequired;
+    nameMsg.innerHTML = "<span class ='text-danger'>This field is required.</span>"
   } else if (!regExpName.test(nameValue)) {
-    nameInput.innerHTML =
+    nameMsg.innerHTML =
       "<span class ='text-danger'>Your full name is invalid.</span>";
   } else {
-    nameInput.innerHTML = success
+    nameMsg.innerHTML = getSuccess
   }
 
     // email 
@@ -63,14 +63,7 @@ document.getElementById('submitBtn').addEventListener('click', () => {
     
     //validate all
 
-    if (
-        nameMsg.innerHTML === getSuccess &&
-        emailMsg.innerHTML === getSuccess &&
-        sportMsg.innerHTML === "" &&
-        textMsg.innerHTML === ""
-    ) {
-        alert("Sent data! We will contact you as soon as possible")
-    }
+    
 })
 
 //reset
@@ -84,5 +77,3 @@ resetBtn.addEventListener('click', () => {
     $("textMsg").innerHTML = "";
       
   })
-
-
