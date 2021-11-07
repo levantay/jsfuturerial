@@ -8,17 +8,20 @@ const getName = (ele) => {
 
 document.getElementById('submitBtn').addEventListener('click', () => {
     //fullName
-    const nameInput = $('nameInput')
-    const nameMsg = $('nameMsg')
-    const getSuccess = "<span class ='text-success'>Good job!</span>"
-    const regExpName = /^[a-zA-Z]+(?:\s[a-zA-Z]+)+$/
-    if (nameInput.value === "") {
-        nameMsg.innerHTML = "<span class ='text-danger'>This field is required.</span>"
-    } else if (regExpName.test(nameInput.value)) { 
-        nameMsg.innerHTML = "<span class ='text-danger'>Your full name is invalid.</span>"
-    } else {
-        nameMsg.innerHTML = getSuccess
-    }
+    const nameInput = $("nameInput")
+    const nameValue = fullName.value
+    const success = '<span class="text-success">Good job!</span>';
+    const fieldRequired = "<span class ='text-danger'>This field is required.</span>"
+    const regExpName = /^[a-z]+(?:\s[a-z]+)+$/;
+    const nameMsg = $("nameMsg")
+    if (nameValue === "") {
+    textName.innerHTML =fieldRequired;
+  } else if (!regExpName.test(nameValue)) {
+    textName.innerHTML =
+      "<span class ='text-danger'>Your full name is invalid.</span>";
+  } else {
+    textName.innerHTML = success
+  }
 
     // email 
     const emailInput = $('emailInput')
