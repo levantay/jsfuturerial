@@ -13,7 +13,7 @@ const nameInputValidate = (value, text) => {
 
 // Email input validate function
 const emailInputValidate = (value, text) => {
-  const regExpEmail = /^[a-z]{0,9}\@[a-z]{0,9}\.com$/
+  const regExpEmail = /^[a-z]{0,9}\@gmail.com$/
   let isValidEmail = true
 
   if (!regExpEmail.test(value)) {
